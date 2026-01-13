@@ -472,7 +472,7 @@ Activity Logs show Azure Resource Manager operations on your AKS cluster.
 ```kql
 // Recent AKS operations
 AzureActivity
-| where ResourceProvider == "Microsoft.ContainerService"
+| where ResourceProviderValue == "MICROSOFT.CONTAINERSERVICE"
 | where ResourceGroup == "<YOUR_RESOURCE_GROUP>"
 | project TimeGenerated, OperationName, ActivityStatus, Caller, Properties
 | order by TimeGenerated desc
